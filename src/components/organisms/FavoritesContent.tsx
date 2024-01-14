@@ -42,13 +42,10 @@ export const FavoritesContent = () => {
         {favorites &&
           favorites.map((rocket, index) => (
             <Card
-              id={rocket?.id}
-              imageSrc={
-                process.env.PUBLIC_URL +
-                `/images/space_${(index + 1) % 3 || 3}.png`
-              }
-              name={rocket?.name}
-              description={rocket?.description}
+              id={rocket.id}
+              imageSrc={rocket.imageSrc}
+              name={rocket.name}
+              description={rocket.description}
             />
           ))}
       </StyledContainer>
