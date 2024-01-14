@@ -20,7 +20,7 @@ export const ItemSlider: React.FC<Props> = ({ name }) => {
   const settings = {
     dots: true,
     infinite: false,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 3,
     slidesToScroll: 3,
     className: 'slider-style',

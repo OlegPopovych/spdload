@@ -21,6 +21,7 @@ const StyledButton = styled.div`
   font-weight: 400;
   line-height: 32px;
 	cursor: pointer;
+	z-index: 1000;
 `;
 
 export const ScrollButton = () => {
