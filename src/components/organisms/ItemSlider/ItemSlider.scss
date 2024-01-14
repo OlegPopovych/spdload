@@ -1,0 +1,198 @@
+$separator-color: #e2e6e9;
+$bg-color-controllers-hov: #f1f5f8;
+
+.sliderContainer {
+	margin-block: 96px;
+	max-width: 1280px;
+	margin-inline: auto;
+
+	  @media (max-width: 1350px) {
+			margin-inline: 50px;
+  }
+}
+
+.sliderTitle {
+	color: #1E1E1E;
+	font-family: Syne;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	text-transform: uppercase;
+	margin: 0 0 40px 0;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 140%;
+}
+
+
+.card_slider {
+  .slider-style .slick-slide {
+    margin-left: 16px;
+  }
+  position: relative;
+  &.card_slider_light {
+    .slick-slider {
+      .slick {
+        &-prev {
+					transition: background-color 0.2s ease-in;
+          background-color: $separator-color
+            url('../../../../public/Slider/arrow-left-disabled.svg') no-repeat center;
+
+          &:hover {
+            border-radius: 10%;
+            background-color: $bg-color-controllers-hov;
+          }
+        }
+
+        &-next {
+					transition: background-color 0.2s ease-in;
+          background-color: $separator-color
+            url('../../../../public/Slider/arrow-right-disabled.svg') no-repeat center;
+          transition: 0.6 ease-in-out;
+
+          &:hover {
+            border-radius: 10%;
+            background-color: $bg-color-controllers-hov;
+          }
+        }
+
+        &-next.slick-disabled {
+					transition: background-color 0.2s ease-in;
+          background: url('../../../../public/Slider/arrow-right-disabled.svg')
+            no-repeat center;
+          border: 1px solid $separator-color;
+        }
+
+        &-prev.slick-disabled {
+					transition: background-color 0.2s ease-in;
+          background: url('../../../../public/Slider/arrow-left-disabled.svg')
+            no-repeat center;
+          border: 1px solid $separator-color;
+        }
+      }
+    }
+  }
+
+  .slick-slider {
+    position: static;
+    .slick-list {
+			transition: background-color 0.2s ease-in;
+      margin-left: -16px;
+      margin-right: -16px;
+
+      .slick-track {
+        display: flex;
+      }
+    }
+    .slick {
+      &-prev {
+				transition: background-color 0.2s ease-in;
+        position: absolute;
+        top: 24px;
+        right: 60px;
+        left: auto;
+        width: 44px;
+        height: 44px;
+        background: $separator-color
+          url('../../../../public/Slider/arrow-left-disabled.svg') no-repeat center;
+        transition: 0.2 ease-in-out;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          border-radius: 10%;
+          background-color: $bg-color-controllers-hov;
+        }
+      }
+
+      &-next {
+				transition: background-color 0.2s ease-in;
+        top: 24px;
+        right: 0px;
+        left: auto;
+        width: 44px;
+        height: 44px;
+        background: $separator-color
+          url('../../../../public/Slider/arrow-right-disabled.svg') no-repeat center;
+        transition: 0.6 ease-in-out;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          border-radius: 10%;
+          background-color: $bg-color-controllers-hov;
+        }
+      }
+
+      &-next.slick-disabled {
+        pointer-events: none;
+        background: url('../../../../public/Slider/arrow-right-disabled.svg')
+          no-repeat center;
+        border: 1px solid $separator-color;
+      }
+
+      &-prev.slick-disabled {
+        pointer-events: none;
+        background: url('../../../../public/Slider/arrow-left-disabled.svg') no-repeat
+          center;
+        border: 1px solid $separator-color;
+      }
+    }
+  }
+}
+
+.slick-dots {
+	position: static;
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.slick-dots li {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	cursor: pointer;
+}
+
+.slick-dots li button {
+	position: relative;
+	display: block;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	margin: 40px 0 0 0;
+	cursor: pointer;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	border-radius: 50%;
+	outline: none;
+
+	&:before {
+    content: '•';
+    font-size: 12px;
+    line-height: 24px;
+    position: absolute;
+		display: inline-block;
+		width: 22px;
+    text-align: center;
+    opacity: 0;
+    color: black;
+		transition: opacity 0.2s ease-in;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.slick-dots li.slick-disabled button:before {
+	opacity: 1;
+	color: black;
+}

@@ -1,0 +1,60 @@
+.slick-dots.slick-thumb li {
+  margin: 0 6px;
+  width: 14px;
+  height: 4px;
+  background-color: #d1d1d1;
+}
+.slick-dots.slick-thumb li.slick-active {
+  background-color: rgb(181, 83, 132);
+}
+
+.slick-list {
+  border-radius: 8px;
+}
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 49%;
+  display: block;
+  height: 99%;
+  width: 32px;
+  border: 1px solid #b4bdc4;
+  padding: 14px;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  transition: border 0.3s;
+  color: transparent;
+  outline: none;
+  background: transparent;
+}
+.slick-prev:hover, .slick-next:hover {
+  border: 1px solid #0f0f11;
+}
+.slick-prev {
+  left: -45px;
+  top: 49%;
+  position: absolute;
+  z-index: 1;
+}
+.slick-prev::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.slick-next {
+  right: -45px;
+}
+.slick-next::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
