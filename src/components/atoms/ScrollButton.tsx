@@ -7,7 +7,7 @@ const StyledButton = styled.div`
   bottom: 33px;
   color: #fff;
   width: 223px;
-  background-image: url(/icons/arrow_down.svg);
+  background-image: url('${process.env.PUBLIC_URL}/icons/arrow_down.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right 0 top 0;
