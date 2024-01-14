@@ -34,7 +34,7 @@ export const Navigation: React.FC<Props> = ({navItems, type}) => {
       <StyledUl>
 				{navItems.map(elem => {
 					return (
-						<NavigationItem label={elem.label} href={elem.href} type={type}/>
+						<NavigationItem key={elem.label} label={elem.label} href={elem.href} type={type}/>
 					)
 				})}
       </StyledUl>

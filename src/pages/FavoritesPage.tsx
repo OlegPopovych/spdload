@@ -21,16 +21,30 @@ const StyledBanner = styled.div`
   background-size: cover;
   background-position: right 0 top -200px;
   height: 50vh;
+  color: #FFF;
+	padding-top: 25vh;
+	box-sizing: border-box;
+  text-align: center;
+  font-family: Syne;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
 
 	@media (max-width: 1250px) {
 			height: 25vh;
+			padding-top: 12vh;
+			font-size: 24px;
   }
 `;
 
 export const FavoritesPage = () => {
   return (
     <StyledFavorites>
-      <StyledBanner />
+      <StyledBanner>
+			favourites
+			</StyledBanner>
 
       <FavoritesContent />
 

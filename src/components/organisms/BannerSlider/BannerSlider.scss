@@ -131,3 +131,8 @@ $bg-color-controllers-hov: #f1f5f8;
 .bannerSlider .slick-next {
 	display: none !important;
 }
+
+.slick-track {
+	display: flex;
+	cursor: grab;
+}

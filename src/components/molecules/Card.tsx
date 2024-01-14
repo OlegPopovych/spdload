@@ -66,41 +66,41 @@ const ProductDesc = styled.p`
 const ProductCardComponent: React.FC<ProductCardProps> = ({
   id,
   imageSrc,
-  name,
-  description,
+	mission_name,
+	details,
 }) => {
   const [data, setData] = useRecoilState(favoriteState);
   
   const isInFavorites = data.find((elem) => elem.id === id);
 
   const onAddToFavorites = () => {
-    if (id && imageSrc && name && description) {
+    if (id && imageSrc) {
       setData([
         ...data,
         {
           id,
           imageSrc,
-          name,
-          description,
+          mission_name: mission_name || 'NO NAME',
+          details: details || 'NO DETAILS',
         },
       ]);
     }
   };
 
   const onDeleteToFavorites = () => {
-    if (id && imageSrc && name && description) {
+    if (id && imageSrc && mission_name && details) {
       setData(data.filter((elem) => elem.id !== id));
     }
   };
 
   return (
     <ProductCard>
-      <ProductImage src={imageSrc} alt={name || 'no data'} />
+      <ProductImage src={imageSrc} alt={mission_name || 'empty name'} />
 
       <CardInfo>
         <div>
-          <ProductName>{name || 'no data'}</ProductName>
-          <ProductDesc>{description || 'no data'}</ProductDesc>
+          <ProductName>{mission_name || 'NO NAME'}</ProductName>
+          <ProductDesc>{details || 'NO DETAILS'}</ProductDesc>
         </div>
 
         <CartButtons>
@@ -127,16 +127,16 @@ const ProductCardComponent: React.FC<ProductCardProps> = ({
 export const Card: React.FC<ProductCardProps> = ({
   id,
   imageSrc,
-  name,
-  description,
+  mission_name,
+  details,
 }) => {
   return (
     <div>
       <ProductCardComponent
         id={id}
         imageSrc={imageSrc}
-        name={name}
-        description={description}
+        mission_name={mission_name}
+        details={details}
       />
     </div>
   );

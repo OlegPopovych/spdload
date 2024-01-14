@@ -3,36 +3,26 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ItemSlider.scss';
 import { Card } from '../../molecules/Card';
-
-import { gql } from '../../../__generated__/gql';
 import { useQuery } from '@apollo/client';
-
-const GET_ROCKETS = gql(/* GraphQL */ `
-  query ExampleQuery {
-    rockets {
-      id
-      description
-      name
-    }
-  }
-`);
+import { GET_TOURS } from '../../../apollo_api/query';
 
 interface Props {
   name: string;
-  state?: 'loading' | 'error';
 }
 
-export const ItemSlider: React.FC<Props> = ({ name, state }) => {
-  const { loading, data } = useQuery(
-    GET_ROCKETS
-  );
+export const ItemSlider: React.FC<Props> = ({ name }) => {
+  const { loading, data } = useQuery(GET_TOURS, {
+    variables: {
+      toursLimit: 10,
+    },
+  });
 
   const settings = {
     dots: true,
     infinite: false,
     speed: 1000,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     className: 'slider-style',
     margin: 24,
     responsive: [
@@ -76,22 +66,23 @@ export const ItemSlider: React.FC<Props> = ({ name, state }) => {
               key={id}
               id={'1'}
               imageSrc={process.env.PUBLIC_URL + '/images/space_loading.png'}
-              name='Loading...'
-              description='Loading...'
+              mission_name='Loading...'
+              details='Loading...'
             />
           ))}
 
         {data &&
-          data.rockets &&
-          data.rockets.map((rocket, index) => (
+          data.launches &&
+          data.launches.map((launch, index) => (
             <Card
-              id={rocket?.id}
+              key={launch?.id}
+              id={launch?.id}
               imageSrc={
                 process.env.PUBLIC_URL +
                 `/images/space_${(index + 1) % 3 || 3}.png`
               }
-              name={rocket?.name}
-              description={rocket?.description}
+              mission_name={launch?.mission_name}
+              details={launch?.details}
             />
           ))}
       </Slider>

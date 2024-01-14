@@ -8,8 +8,8 @@ export type NavItem = {
 export interface ProductCardProps {
   imageSrc: string;
   id: string | null | undefined;
-  description: string | null | undefined;
-  name: string | null | undefined;
+  details: string | null | undefined;
+  mission_name: string | null | undefined;
 }
 
 export interface NavigationItemProps {
@@ -18,9 +18,9 @@ export interface NavigationItemProps {
   type: NavType;
 }
 
-export type Rocket = {
+export type Tour = {
 	id: string;
 	imageSrc: string;
-	description: string;
-	name: string;
+	details: string;
+	mission_name: string;
 }

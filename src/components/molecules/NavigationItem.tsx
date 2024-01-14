@@ -19,9 +19,9 @@ const StyledNavLink = styled(NavLink)`
   &::after {
     content: '';
     display: block;
-    bottom: 20px;
+    bottom: 27px;
     position: absolute;
-    height: 3px;
+    height: 1px;
     width: 100%;
     background-color: transparent;
     transition: all 0.3s ease-in;

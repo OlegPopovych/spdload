@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { Rocket } from '../types/types';
+import { Tour } from '../types/types';
 
-export const favoriteState = atom<Rocket[]>({
+export const favoriteState = atom<Tour[]>({
   key: 'favoriteState',
   default: [],
 });

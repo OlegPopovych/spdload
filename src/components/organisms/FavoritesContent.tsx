@@ -40,12 +40,12 @@ export const FavoritesContent = () => {
 
       <StyledContainer>
         {favorites &&
-          favorites.map((rocket, index) => (
+          favorites.map((tour, index) => (
             <Card
-              id={rocket.id}
-              imageSrc={rocket.imageSrc}
-              name={rocket.name}
-              description={rocket.description}
+              id={tour.id}
+              imageSrc={tour.imageSrc}
+              mission_name={tour.mission_name}
+              details={tour.details}
             />
           ))}
       </StyledContainer>

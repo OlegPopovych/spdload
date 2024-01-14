@@ -5,7 +5,7 @@ import App from './App';
 import { ApolloProvider } from '@apollo/client';
 import { RecoilRoot } from 'recoil';
 import { HashRouter } from 'react-router-dom';
-import { client } from './apollo/client';
+import { client } from './apollo_api/client';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
